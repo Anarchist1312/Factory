@@ -1,0 +1,33 @@
+﻿@model lab3Original.Models.User
+
+@{
+	ViewBag.Title = "Реєстрація";
+	Layout = "_Layout";
+}
+
+<div class="row" style="display: flex; justify-content: center">
+	<div class="col-md-4">
+		<form id="Index"  method="post">
+			<h2>Створити новий акаунт</h2>
+			<hr />
+			<div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+			<div class="form-floating mb-3">
+				<input asp-for="Name" class="form-control" autocomplete="username" aria-required="true" placeholder="name" />
+				<label asp-for="Name">Логін</label>
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+			<br />
+			<div class="form-floating mb-3">
+				<input asp-for="Password" type="password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+				<label asp-for="Password">Пароль</label>
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+			<hr />
+			<button  type="submit" class="w-100 btn btn-lg btn-primary">Зареєструватися</button>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+			<partial name="_ValidationScriptsPartial" />
+}

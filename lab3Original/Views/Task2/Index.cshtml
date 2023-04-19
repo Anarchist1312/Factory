@@ -1,0 +1,32 @@
+﻿@model lab3Original.Models.Output
+
+@{
+    ViewBag.Title = "Завдання 2";
+    Layout = "_Layout";
+}
+<div style="display: flex; justify-content: center">
+    <div style="width:60%">
+        <table class="table table-striped">
+            <thead>
+                <tr style="text-align: center">
+                    <th>Номер цеху</th>
+                    <th>Максимальна зарплата</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.task2res!)
+                {
+                    <tr style="text-align: center">
+                        <td>
+                            @item.Key
+                        </td>
+                        <td>
+                            @item.Value
+                        </td>
+                        <td />
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

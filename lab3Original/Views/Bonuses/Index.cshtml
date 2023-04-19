@@ -1,0 +1,32 @@
+﻿@model lab3Original.Models.Output
+
+@{
+	ViewBag.Title = "Премії";
+	Layout = "_Layout";
+}
+<div style="display: flex; justify-content: center">
+	<div style="width:60%">
+		<table class="table table-striped">
+			<thead>
+				<tr style="text-align: center">
+					<th>Код працівника</th>
+					<th>Розмір премії</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.outputBonuses!)
+				{
+					<tr style="text-align: center">
+						<td>
+							@item.Id
+						</td>
+						<td>
+							@item.Amount
+						</td>
+						<td />
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
